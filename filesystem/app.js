@@ -10,6 +10,17 @@ fs.readFile("../filesystem/input.txt", "utf-8", (err, data) => {
   console.log(data);
   fs.readFile(`../filesystem/${data}.txt`, "utf-8", (err, data2) => {
     console.log(data2);
+    fs.writeFile(
+      "../filesystem/append.txt",
+      `${data}\n${data2}\n${Date.now()}`,
+      (err) => {
+        if (err) {
+          console.error("Error writing file:", err);
+        } else {
+          console.log("File written successfully");
+        }
+      }
+    );
   });
 });
 console.log("Reading file...");
