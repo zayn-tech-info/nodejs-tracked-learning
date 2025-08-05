@@ -1,0 +1,1 @@
+Example text to log in my node js console
