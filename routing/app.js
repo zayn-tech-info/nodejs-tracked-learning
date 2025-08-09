@@ -2,6 +2,7 @@ const http = require("http");
 const fs = require("fs");
 
 const html = fs.readFileSync("../routing/index.html", "utf-8");
+const products = JSON.parse(fs.readFileSync("../data/product.json", "utf-8"));
 
 const server = http.createServer((request, response) => {
   const path = request.url;

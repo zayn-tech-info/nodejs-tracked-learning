@@ -1,0 +1,122 @@
+[
+  {
+    "id": 0,
+    "name": "APPLE iPhone SE",
+    "color": "Black",
+    "price": 399,
+    "modelName": "iPhone SE",
+    "modelNumber": "MHGT3HN/A",
+    "screenSize": "11.94 cm (4.7 inch) Retina HD Display",
+    "camera": "12MP Rear Camera | 7MP Front Camera",
+    "description": "Widescreen HD LCD Retina Multi-touch IPS Display (1400:1 Contrast Ratio), True Tone Display, Wide Colour (P3), Haptic Touch, 625 nits Max Brightness, Fingerprint-resistant Oleophobic Coating, Display Zoom, Reachability",
+    "productImage": "https://atlas-content-cdn.pixelsquid.com/stock-images/x-smartphone-xwXQLD-600.jpg"
+  },
+  {
+    "id": 1,
+    "name": "APPLE iPhone XR",
+    "color": "White",
+    "price": 599,
+    "modelName": "iPhone XR",
+    "modelNumber": "MH6N3HN/A",
+    "screenSize": "15.49 cm (6.1 inch) Display",
+    "camera": "12MP Rear Camera | 7MP Front Camera",
+    "description": "1400:1 Contrast Ratio, True Tone Display (Six-channel Light Sensor), Wide Colour (P3), 625 nits Max Brightness, Fingerprint-resistant Oleophobic Coating, Support for Multiple Languages and Characters Simultaneously, Tap to Wake",
+    "productImage": "https://c8.alamy.com/zooms/6/982824ded544c0889497df49f2bae166/2dc68s.jpg"
+  },
+  {
+    "id": 2,
+    "name": "APPLE iPhone 11",
+    "color": "Green",
+    "price": 699,
+    "modelName": "iPhone 11",
+    "modelNumber": "MHDH3HN/A",
+    "screenSize": "15.49 cm (6.1 inch) Liquid Retina HD Display",
+    "camera": "12MP Dual Rear Camera | 12MP Front Camera",
+    "description": "Liquid Retina HD Display, True Tone, Wide Colour (P3), Haptic Touch, 625 nits Max Brightness, Fingerprint-resistant Oleophobic Coating, Face ID, Water and Dust Resistant (IP68)",
+    "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-green-select-2019"
+  },
+  {
+    "id": 3,
+    "name": "APPLE iPhone 11 Pro",
+    "color": "Gold",
+    "price": 999,
+    "modelName": "iPhone 11 Pro",
+    "modelNumber": "MWC72HN/A",
+    "screenSize": "14.73 cm (5.8 inch) Super Retina XDR Display",
+    "camera": "12MP Triple Rear Camera | 12MP Front Camera",
+    "description": "Super Retina XDR OLED Display, HDR10, Dolby Vision, 1200 nits Max Brightness, Fingerprint-resistant Oleophobic Coating, Face ID, IP68 Water and Dust Resistance",
+    "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-11-pro-gold"
+  },
+  {
+    "id": 4,
+    "name": "APPLE iPhone 12",
+    "color": "Blue",
+    "price": 799,
+    "modelName": "iPhone 12",
+    "modelNumber": "MGJ53HN/A",
+    "screenSize": "15.49 cm (6.1 inch) Super Retina XDR Display",
+    "camera": "12MP Dual Rear Camera | 12MP Front Camera",
+    "description": "Super Retina XDR OLED Display, HDR, True Tone, Wide Colour (P3), Haptic Touch, Ceramic Shield, IP68, Face ID, MagSafe",
+    "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-blue-select"
+  },
+  {
+    "id": 5,
+    "name": "APPLE iPhone 12 Mini",
+    "color": "White",
+    "price": 699,
+    "modelName": "iPhone 12 Mini",
+    "modelNumber": "MGDY3HN/A",
+    "screenSize": "13.72 cm (5.4 inch) Super Retina XDR Display",
+    "camera": "12MP Dual Rear Camera | 12MP Front Camera",
+    "description": "Super Retina XDR OLED Display, HDR, Ceramic Shield, True Tone, Wide Colour, Face ID, IP68, MagSafe",
+    "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-mini-white-select"
+  },
+  {
+    "id": 6,
+    "name": "APPLE iPhone 13",
+    "color": "Pink",
+    "price": 799,
+    "modelName": "iPhone 13",
+    "modelNumber": "MLPF3HN/A",
+    "screenSize": "15.49 cm (6.1 inch) Super Retina XDR Display",
+    "camera": "12MP Dual Rear Camera | 12MP Front Camera",
+    "description": "Super Retina XDR OLED Display, HDR, True Tone, Wide Colour (P3), Ceramic Shield, Face ID, Photographic Styles, Cinematic Mode",
+    "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pink-select"
+  },
+  {
+    "id": 7,
+    "name": "APPLE iPhone 13 Pro",
+    "color": "Sierra Blue",
+    "price": 999,
+    "modelName": "iPhone 13 Pro",
+    "modelNumber": "MLVP3HN/A",
+    "screenSize": "15.49 cm (6.1 inch) Super Retina XDR Display with ProMotion",
+    "camera": "12MP Triple Rear Camera | 12MP Front Camera",
+    "description": "Super Retina XDR OLED, ProMotion (120Hz), HDR, Ceramic Shield, Photographic Styles, Cinematic Mode, Face ID, IP68",
+    "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-blue-select"
+  },
+  {
+    "id": 8,
+    "name": "APPLE iPhone 14",
+    "color": "Purple",
+    "price": 799,
+    "modelName": "iPhone 14",
+    "modelNumber": "MPVA3HN/A",
+    "screenSize": "15.49 cm (6.1 inch) Super Retina XDR Display",
+    "camera": "12MP Dual Rear Camera | 12MP Front Camera",
+    "description": "Super Retina XDR OLED, HDR, Photonic Engine, True Tone, Ceramic Shield, Face ID, Crash Detection, IP68",
+    "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-purple-select"
+  },
+  {
+    "id": 9,
+    "name": "APPLE iPhone 14 Pro Max",
+    "color": "Deep Purple",
+    "price": 1199,
+    "modelName": "iPhone 14 Pro Max",
+    "modelNumber": "MQ9R3HN/A",
+    "screenSize": "17.02 cm (6.7 inch) Super Retina XDR Display with ProMotion",
+    "camera": "48MP Triple Rear Camera | 12MP Front Camera",
+    "description": "Super Retina XDR OLED, ProMotion (120Hz), Always-On Display, HDR, Photonic Engine, Face ID, Crash Detection, IP68",
+    "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-14-pro-max-deep-purple-select"
+  }
+]
