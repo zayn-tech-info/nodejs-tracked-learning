@@ -23,9 +23,11 @@ const replace = (template, prod) => {
   return output;
 };
 
-const server = http.createServer((request, response) => {
+// (request, response) => {};
+const server = http.createServer();
+
+server.on("request", (request, response) => {
   const { query, pathname: path } = url.parse(request.url, true);
-  console.log(query);
 
   if (path === "/" || path.toLowerCase() === "/home") {
     response.end(html.replace("{&VALUE&}", "You are in Home Page"));
@@ -49,6 +51,7 @@ const server = http.createServer((request, response) => {
     response.end(html.replace("{&VALUE&}", "Error 404: Page not found"));
   }
 });
+
 
 const PORT = 8001;
 server.listen(PORT, "127.0.0.1", () => {
