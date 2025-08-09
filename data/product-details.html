@@ -10,22 +10,27 @@
       <div class="product-page">
         <div class="product-desc">
           <div class="product-desc-image">
-            <img src="/images/iphone-se.jpg" width="280" height="320" alt="iPhone SE" />
+            <img
+              src="{{%PRODCTIONIMAGE%}}"
+              width="280"
+              height="320"
+              alt="iPhone SE"
+            />
           </div>
           <div>
             <div class="product-details-info">
-              <h1>APPLE iPhone SE</h1>
-              <h2 class="price">$1299</h2>
+              <h1>{{%MODELNAME%}}</h1>
+              <h2 class="price">{{%PRICE%}}</h2>
               <div class="product-desc-details">
                 <h3>Product Details</h3>
-                <p class="product-desc-p">
-                  11.94 cm (4.7 inch) Retina HD Display
-                </p>
-                <p class="product-desc-p">
+                <p class="product-desc-p">{{%SCREENSIZE%}}</p>
+                <!-- <p class="product-desc-p">
                   12MP Rear Camera | 7MP Front Camera
+                </p> -->
+                <p class="product-desc-p">
+                  <b>Model Number:</b>{{%MODELNUMBER%}}/A
                 </p>
-                <p class="product-desc-p"><b>Model Number:</b>MMHG3TH/A</p>
-                <p class="product-desc-p"><b>Model Name:</b>iPhone SE</p>
+                <p class="product-desc-p"><b>Model Name:</b>{{%MODELNAME%}}</p>
                 <p class="product-desc-p"><b>ROM:</b>128 GB</p>
               </div>
             </div>
@@ -33,12 +38,7 @@
         </div>
         <div class="product-details-desc">
           <h3>Product Description</h3>
-          <p class="product-desc-p">
-            Widescreen HD LCD Retina Multi-touch IPS Display (1400:1 Contrast
-            Ratio (Typical), True Tone Display, Wide Color Display (P3), Haptic
-            Touch, 625 nits Max Brightness (Typical), Fingerprint-resistant
-            Oleophobic Coating, Display Zoom, Reachability)
-          </p>
+          <p class="product-desc-p">{{%DESCRIPTION%}}</p>
         </div>
         <div class="product-desc"></div>
         <div>

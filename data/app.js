@@ -5,19 +5,23 @@ const url = require("url");
 const html = fs.readFileSync("../routing/index.html", "utf-8");
 const products = JSON.parse(fs.readFileSync("../data/product.json", "utf-8"));
 const productHtml = fs.readFileSync("../data/products.html", "utf-8");
+const productDetailHtml = fs.readFileSync(
+  "../data/product-details.html",
+  "utf-8"
+);
 
-const productHtmlArray = products.map((prod) => {
-  let output = productHtml.replace("{{%IMAGE%}}", prod.productImage);
-  output = output.replace("{{%MODELNAME%}}", prod.name);
-  output = output.replace("{{%COLOR%}}", prod.color);
-  output = output.replace("{{%PRICE%}}", prod.price);
-  output = output.replace("{{%MODELNUMBER%}}", prod.modelNumber);
-  output = output.replace("{{%SCREENSIZE%}}", prod.screenSize);
-  output = output.replace("{{%DESCRIPTION%}}", prod.camera);
-  output = output.replace("{{%PRODCTIONIMAGE%}}", prod.description);
-  output = output.replace("{{%ID%}}", prod.id);
+const replace = (template, prod) => {
+  let output = template.replace(/{{%PRODUCTIMAGE%}}/g, prod.productImage);
+  output = output.replace(/{{%NAME%}}/g, prod.name);
+  output = output.replace(/{{%SCREENSIZE%}}/g, prod.screenSize);
+  output = output.replace(/{{%MODELNAME%}}/g, prod.modelName);
+  output = output.replace(/{{%MODELNUMBER%}}/g, prod.modelNumber);
+  output = output.replace(/{{%PRICE%}}/g, prod.price);
+  output = output.replace(/{{%COLOR%}}/g, prod.color);
+  output = output.replace(/{{%DESCRIPTION%}}/g, prod.description);
+  output = output.replace(/{{%ID%}}/g, prod.id);
   return output;
-});
+};
 
 const server = http.createServer((request, response) => {
   const { query, pathname: path } = url.parse(request.url, true);
@@ -31,9 +35,14 @@ const server = http.createServer((request, response) => {
     response.end(html.replace("{&VALUE&}", "You are in Contact Page"));
   } else if (path.toLowerCase() === "/products") {
     if (!query.id) {
-      response.end(html.replace("{&VALUE&}", productHtmlArray.join(",")));
-    }else{
-      response.end("This product id is = " + query.id)
+      const productsHtmlArray = products.map((prod) => {
+        return replace(productHtml, prod);
+      });
+      response.end(html.replace("{&VALUE&}", productsHtmlArray.join(",")));
+    } else {
+      let prod = products[query.id];
+      let productDetailResonse = replace(productDetailHtml, prod);
+      response.end(productDetailResonse);
     }
   } else {
     response.statusCode = 404;
@@ -41,7 +50,7 @@ const server = http.createServer((request, response) => {
   }
 });
 
-const PORT = 3000;
+const PORT = 8001;
 server.listen(PORT, "127.0.0.1", () => {
   console.log(`Server is now running on port ${PORT}`);
 });
