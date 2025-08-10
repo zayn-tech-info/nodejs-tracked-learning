@@ -3,7 +3,7 @@ const http = require("http");
 
 const server = http.createServer();
 
-server.on("request", (req, res) => {
+/* server.on("request", (req, res) => {
   let rs = fs.createReadStream("../stream/index.txt");
 
   rs.on("data", (chunk) => {
@@ -16,6 +16,10 @@ server.on("request", (req, res) => {
   rs.on("error", (error) => {
     res.end(error.message);
   });
+}); */
+server.on("request", (req, res) => {
+  let rs = fs.createReadStream("../stream/index.txt");
+  rs.pipe(res);
 });
 
 const PORT = 8000;
