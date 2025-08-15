@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Die Hard",
+    "releaseYear": 1988,
+    "duration": 90
+  },
+  {
+    "id": 2,
+    "name": "Expandables",
+    "releaseYear": 2008,
+    "duration": 80
+  },
+  {
+    "id": 3,
+    "name": "Interstellar",
+    "releaseYear": 2014,
+    "duration": 120
+  },
+  {
+    "id": 4,
+    "name": "Inception",
+    "releaseYear": 2010,
+    "duration": 148
+  },
+  {
+    "id": 5,
+    "name": "The Matrix",
+    "releaseYear": 1999,
+    "duration": 136
+  },
+  {
+    "id": 6,
+    "name": "Gladiator",
+    "releaseYear": 2000,
+    "duration": 155
+  },
+  {
+    "id": 7,
+    "name": "Titanic",
+    "releaseYear": 1997,
+    "duration": 195
+  },
+  {
+    "id": 8,
+    "name": "Avatar",
+    "releaseYear": 2009,
+    "duration": 162
+  },
+  {
+    "id": 9,
+    "name": "The Godfather",
+    "releaseYear": 1972,
+    "duration": 175
+  },
+  {
+    "id": 10,
+    "name": "Jurassic Park",
+    "releaseYear": 1993,
+    "duration": 127
+  }
+]
