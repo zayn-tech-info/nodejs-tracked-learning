@@ -5,6 +5,13 @@ const app = express();
 const movies = JSON.parse(fs.readFileSync("./movies.json", "utf-8"));
 
 app.use(express.json());
+
+const timer = (req, res, next) => {
+  req.requestedAT = new Date().toISOString();
+  next();
+};
+
+app.use(timer);
 app.get("/", (req, res) => {
   res.status(200).send("Hello I'm from an express folder");
 });
@@ -17,17 +24,18 @@ app.get("/", (req, res) => {
 });
  */
 
-app.get("/api/v1/movies", (req, res) => {
+const getAllMovies = (req, res) => {
   res.status(200).json({
     status: "success",
+    requestedAT: req.requestedAT,
     count: movies.length,
     data: {
       movies,
     },
   });
-});
+};
 
-app.post("/api/v1/movies", (req, res) => {
+const createMovie = (req, res) => {
   const newId = movies[movies.length - 1].id + 1;
   console.log(newId);
 
@@ -42,15 +50,15 @@ app.post("/api/v1/movies", (req, res) => {
       },
     });
   });
-});
+};
 
-app.get("/api/v1/movies/:id", (req, res) => {
+const getMovie = (req, res) => {
   const id = Number(req.params.id);
   const movie = movies.find((movieItem) => movieItem.id === id);
 
   if (!movie) {
-    res.status(404).json({
-      status: "success",
+    return res.status(404).json({
+      status: "fail",
       message: "Movie with this id " + id + " is not found",
     });
   }
@@ -60,32 +68,64 @@ app.get("/api/v1/movies/:id", (req, res) => {
       movie,
     },
   });
-});
+};
 
-app.patch("/api/v1/movies/:id", (req, res) => {
+const updateMovie = (req, res) => {
   const id = Number(req.params.id);
   const movieToUpdate = movies.find((movieItem) => movieItem.id === id);
 
+  if (!movieToUpdate) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Unable to update movie",
+    });
+  }
+
   const movie = Object.assign(movieToUpdate, req.body);
   const index = movies.indexOf(movieToUpdate);
-
-  if(!movie){
-    res.status(404).json({
-      status: 'fail',
-      message: 'Unable to update movie'
-    })
-  }
   movies[index] = movieToUpdate;
 
-  fs.writeFile('./movies.json', JSON.stringify(movies), ()=>{
+  fs.writeFile("./movies.json", JSON.stringify(movies), () => {
     res.status(200).json({
-      status: 'success', 
-      data:{
-        movie
-      }
-    })
-  })
-});
+      status: "success",
+      data: {
+        movie,
+      },
+    });
+  });
+};
+
+const deleteMovie = (req, res) => {
+  const id = Number(req.params.id);
+  const movieToUpdate = movies.find((movieItem) => movieItem.id === id);
+
+  if (!movieToUpdate) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Unable to delete movie",
+    });
+  }
+
+  const index = movies.indexOf(movieToUpdate);
+  movies.splice(index, 1);
+
+  fs.writeFile("./movies.json", JSON.stringify(movies), () => {
+    res.status(200).json({
+      status: "success",
+      data: {
+        movie: null,
+      },
+    });
+  });
+};
+
+app.route("/api/v1/movies").get(getAllMovies).post(createMovie);
+
+app
+  .route("/api/v1/movies/:id")
+  .get(getMovie)
+  .patch(updateMovie)
+  .delete(deleteMovie);
 
 const port = 3000;
 
