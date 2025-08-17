@@ -15,6 +15,16 @@ exports.checkId = (req, res, next, value) => {
   next();
 };
 
+exports.validation = (req, res, next) => {
+  if (!req.body || !req.body.name || !req.body.releaseYear) {
+    return res.status(400).json({
+      status: "fail",
+      message: "Not a valid movie",
+    });
+  }
+  next();
+};
+
 exports.getAllMovies = (req, res) => {
   res.status(200).json({
     status: "success",

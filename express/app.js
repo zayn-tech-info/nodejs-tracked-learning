@@ -3,7 +3,6 @@ const productsRoute = require("./routes/products.routes");
 
 const app = express();
 app.use(express.json());
-
 app.use("/api/v1/movies", productsRoute);
 
 const timer = (req, res, next) => {
@@ -12,8 +11,5 @@ const timer = (req, res, next) => {
 };
 
 app.use(timer);
-app.get("/", (req, res) => {
-  res.status(200).send("Hello I'm from an express folder");
-});
 
 module.exports = app;
